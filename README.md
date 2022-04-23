@@ -38,7 +38,7 @@ There are build options to build Google Test tests, generate Doxygen documents a
 All options are OFF in default but the desired option can be turned on by setting it ON in the build command.
 
 ```bash
-$ cmake -G "Unix Makefiles" .. -DBUILD_TESTS=ON -DGENERATE_DOCS=ON -GENERATE_GRAPH=ON 
+$ cmake -G "Unix Makefiles" .. -DBUILD_TESTS=ON -DGENERATE_DOCS=ON -DGENERATE_GRAPH=ON 
 ```
 
 ### How to Run Application
