@@ -1,0 +1,21 @@
+add_executable(UserDBTest
+	UserDBTest.cpp
+)
+
+target_include_directories(UserDBTest
+	PRIVATE
+	${gtest_SOURCE_DIR}/include 
+	${COMMON_INCLUDES}
+)
+
+target_link_libraries(UserDBTest
+	PRIVATE	
+	UserDB
+	GTest::gtest
+	GTest::gtest_main
+)
+
+add_test(
+	NAME UserDBTest
+	COMMAND UserDBTest
+)

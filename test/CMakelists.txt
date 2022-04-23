@@ -1,0 +1,23 @@
+find_package(GTest)
+
+if (GTest_FOUND)
+	message("Google Test found!")
+else (GTest_FOUND)
+	message("Google Test not found. Downloading...")
+
+	include(FetchContent)
+	FetchContent_Declare(
+	  googletest
+	  # Specify the commit you depend on and update it regularly.
+	  URL https://github.com/google/googletest/archive/e2239ee6043f73722e7aa812a459f54a28552929.zip
+	)
+	FetchContent_MakeAvailable(googletest)
+endif (GTest_FOUND)
+
+if (WIN32)
+	# For Windows: Prevent overriding the parent project's compiler/linker settings
+	set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+endif()
+
+add_subdirectory(CLI)
+add_subdirectory(UserDB)

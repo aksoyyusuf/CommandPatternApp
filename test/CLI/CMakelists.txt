@@ -1,0 +1,21 @@
+add_executable(CLITest
+	CLITest.cpp
+)
+
+target_include_directories(CLITest
+	PRIVATE
+	${gtest_SOURCE_DIR}/include 
+	${COMMON_INCLUDES}
+)
+
+target_link_libraries(CLITest
+	PRIVATE	
+	CLI
+	GTest::gtest
+	GTest::gtest_main
+)
+
+add_test(
+	NAME CLITest
+	COMMAND CLITest
+)
